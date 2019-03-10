@@ -16,7 +16,7 @@ at_pointer          = 1
 item_margin_x       = 0
 item_margin_y       = 0
 item_height         = 34
-font                = Sans 10
+font                = Roboto Condensed:style=Regular 12
 icon_size           = 24
 #color_menu_bg       = #C8CFCB 100
 #color_menu_border   = #C8CFCB 8
