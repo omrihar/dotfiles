@@ -1,0 +1,32 @@
+priority 0
+
+snippet trans "Translate"
+{{ $t('$1') }}$0
+endsnippet
+
+snippet col "Column"
+{ name: '${1}', label: '${2}', field: '${3:$1}${4}', align: '${5:left}' }, $0
+endsnippet
+
+snippet vcol "Vertical Column"
+{
+  name: '${1}',
+  label: '${2}',
+  field: '${3:$1}${4}',
+  align: '${5:left}',
+},
+endsnippet
+
+snippet qtd "Q-Td entry"
+q-td(
+  slot="body-cell-${1}",
+  slot-scope="props",
+  :props="props"
+)
+endsnippet
+
+snippet func "Function or method"
+$1() {
+  $0
+},
+endsnippet

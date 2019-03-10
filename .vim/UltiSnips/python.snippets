@@ -1,0 +1,25 @@
+snippet emb "Embed into IPython" b
+import subprocess; subprocess.call(['notify-send', 'Excuse me...']);
+import IPython; IPython.embed()
+endsnippet
+
+snippet log "Create a nice logger" b
+logging.basicConfig(level=logging.INFO,
+					format="%(asctime)s - %(levelname)s - %(message)s",
+					datefmt="%H:%M:%S")
+logger = logging.getLogger('${1:my_logger}')
+$0
+endsnippet
+
+snippet exit "Exit at this point" b
+import sys; sys.exit(0)
+endsnippet
+
+snippet notify "Call me from my wanderings" b
+import subprocess; subprocess.call(['notify-send', '${1:Hello there!}']);
+endsnippet
+
+snippet sc "Schema field for mongothon" b
+'$1': {'type': ${2:basestring}, 'required': ${3:True}},$0
+endsnippet
+	
