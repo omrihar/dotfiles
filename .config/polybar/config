@@ -66,7 +66,7 @@ modules-left = i3
 ;modules-center = mpd
 modules-center = date
 ;modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
-modules-right = xbacklight pulseaudio xkeyboard memory cpu wlan eth battery powermenu
+modules-right = xbacklight pulseaudio xkeyboard memory cpu wlan eth battery powermenu2
 
 tray-position = right
 tray-padding = 4
@@ -416,6 +416,13 @@ ramp-0 = 
 ramp-1 = 
 ramp-2 = 
 ramp-foreground = ${colors.foreground-alt}
+
+[module/powermenu2]
+type = custom/script
+label = 
+label-padding = 2
+exec = echo "menu"
+click-left = "~/bin/shutdown_menu"
 
 [module/powermenu]
 type = custom/menu
