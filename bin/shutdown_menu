@@ -10,8 +10,9 @@ trap "rm -f ${config_file}" EXIT
 cat <<'EOF' >${config_file}
 tint2_look          = 0
 menu_radius         = 1
-menu_halign         = right
-menu_valign         = top
+#menu_halign         = right
+#menu_valign         = top
+at_pointer          = 1
 item_margin_x       = 0
 item_margin_y       = 0
 item_height         = 34
