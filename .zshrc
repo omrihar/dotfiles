@@ -158,6 +158,11 @@ _editmd() {
 compdef _editmd editmd
 compdef _editmd pandocmk
 
+_present() {
+  _path_files -g "*.pdf"
+}
+compdef _present present
+
 export PATH="$HOME/.yarn/bin:$PATH"
 
 # Stuff for virtualenvwrapper to work
