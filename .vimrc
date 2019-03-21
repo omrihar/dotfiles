@@ -496,3 +496,5 @@ let g:AutoPairsFastWrap = '<Ctrl+e>'
 au FileType python let g:AutoPairs["'''"] = "'''"
 au FileType python let g:AutoPairs['"""'] = '"""'
 au FileType python let g:AutoPairs["f'"] = "'"
+
+set mouse=a
