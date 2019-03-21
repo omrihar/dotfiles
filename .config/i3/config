@@ -9,8 +9,8 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod1
-set $sup Mod4
+set $mod Mod4
+set $sup Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -101,9 +101,9 @@ set $ws1 "1:  Terminal "
 set $ws2 "2:  Code "
 set $ws3 "3:  Firefox "
 set $ws4 "4:  Communications "
-set $ws5 "5:  Bugs"
+set $ws5 "5:  HMM"
 set $ws6 "6:  Presentations"
-set $ws7 "7: AgaArm"
+set $ws7 "7:  Bugs"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10:  Music "
@@ -220,7 +220,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 #bindsym $sup+l exec i3lock -e -i /home/omri/Pictures/i3/windows.png -p win
 bindsym $sup+l exec "playerctl stop ; i3lock-fancy -f Fira-Sans-Light -p -t \\"Sorry, I'm Locked...\\" -- scrot"
 bindsym $sup+s exec "playerctl stop ; i3lock-fancy -f Fira-Sans-Light -p -t \\"Sorry, I'm Locked...\\" -- scrot && sudo systemctl suspend"
-exec --no-startup-id xautolock -time 5 -locker "playerctl stop ; i3lock-fancy -f Fira-Sans-Light -p -t \\"Sorry, I'm Locked...\\" -- scrot"
+exec --no-startup-id xautolock -detectsleep -time 30 -locker "playerctl stop ; i3lock-fancy -f Fira-Sans-Light -p -t \\"Sorry, I'm Locked...\\" -- scrot"
 
 # Use mod+x to create a screenshot
 bindsym Print exec --no-startup-id maim -s --format=png /dev/stdout | xclip -selection clipboard -t image/png -i
@@ -231,10 +231,11 @@ bindsym $mod+minus scratchpad show
 
 # Move workspaces to other displays
 bindsym $mod+m move workspace to output left
+bindsym $mod+p move workspace to output DP1
 
 # Change layout to single monitor mode
-bindsym $sup+m exec /home/omri/.screenlayout/laptop.sh
-bindsym $sup+n exec /home/omri/.screenlayout/schmiede.sh
+bindsym $sup+n exec /home/omri/.screenlayout/laptop.sh
+bindsym $sup+m exec /home/omri/.screenlayout/schmiede.sh
 
 # Multimedia keys support
 # Audio
@@ -253,10 +254,10 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20
 exec /home/omri/.screenlayout/schmiede.sh
 
 # Keyboard layout control
-exec "setxkbmap -layout us,il,de -variant ,,qwerty -option 'grp:win_space_toggle'"
-bindcode $sup+31 exec --no-startup-id "setxkbmap -layout il,us,de -variant ,,qwerty -option 'grp:win_space_toggle'"
-bindcode $sup+26 exec --no-startup-id "setxkbmap -layout us,il,de -variant ,,qwerty -option 'grp:win_space_toggle'"
-bindcode $sup+40 exec --no-startup-id "setxkbmap -layout de,us,il -variant qwerty,, -option 'grp:win_space_toggle'"
+exec "setxkbmap -layout us,il,de -variant ,,qwerty -option 'grp:menu_toggle'"
+#bindcode $sup+31 exec --no-startup-id "setxkbmap -layout il,us,de -variant ,,qwerty -option 'grp:win_space_toggle'"
+#bindcode $sup+26 exec --no-startup-id "setxkbmap -layout us,il,de -variant ,,qwerty -option 'grp:win_space_toggle'"
+#bindcode $sup+40 exec --no-startup-id "setxkbmap -layout de,us,il -variant qwerty,, -option 'grp:win_space_toggle'"
 
 for_window [instance="guake"] floating enable
 for_window [class="Yad"] floating enable
@@ -266,10 +267,10 @@ for_window [class="Blueberry.py"] floating enable
 for_window [class="tablet.py"] floating enable
 
 # Close windows with Alt+F4 as I'm used to
-bindsym $mod+F4 kill
+bindsym $sup+F4 kill
 
 # Use Alt+Tab to switch windows
-bindsym $mod+Tab exec --no-startup-id rofi -show window
+bindsym $sup+Tab exec --no-startup-id rofi -show window
 exec --no-startup-id ssh-agent
 
 # Setup default workspaces on monitors etc
@@ -303,6 +304,7 @@ exec compton
 exec_always --no-startup-id feh --bg-fill --randomize ~/wallpapers
 #exec --no-startup-id conky -c /home/omri/.config/i3/conky_solarized
 exec --no-startup-id nm-applet
+bindsym $mod+o exec --no-startup-id compton-trans -c -o 100
 
 focus_follows_mouse no
 workspace_auto_back_and_forth yes
@@ -431,3 +433,5 @@ mode "$mode_gaps_left" {
 
 smart_gaps on
 smart_borders no_gaps
+
+exec xrdb -load -merge ~/.Xresources
