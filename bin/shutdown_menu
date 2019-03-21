@@ -17,7 +17,7 @@ item_margin_x       = 0
 item_margin_y       = 0
 item_height         = 34
 font                = Roboto Condensed:style=Regular 12
-icon_size           = 24
+icon_size           = 16
 #color_menu_bg       = #C8CFCB 100
 #color_menu_border   = #C8CFCB 8
 color_menu_border    = #FFB52A 8
@@ -29,8 +29,8 @@ color_menu_border    = #FFB52A 8
 EOF
 
 (
-printf "%b\n" "logout,i3-msg \"exit\",/usr/share/icons/Adwaita/scalable/actions/system-log-out-symbolic.svg"
-printf "%b\n" "poweroff,systemctl -i poweroff,/usr/share/icons/Adwaita/scalable/actions/system-shutdown-symbolic.svg"
-printf "%b\n" "reboot,systemctl -i reboot,/usr/share/icons/Adwaita/scalable/actions/system-reboot-symbolic.svg"
-printf "%b\n" "sleep,systemctl -i suspend,/usr/share/icons/Adwaita/scalable/actions/system-switch-user-symbolic.svg"
+printf "%b\n" "logout,i3-msg \"exit\",system-log-out-symbolic"
+printf "%b\n" "poweroff,systemctl -i poweroff,system-shutdown-symbolic"
+printf "%b\n" "reboot,systemctl -i reboot,system-reboot-symbolic"
+printf "%b\n" "sleep,systemctl -i suspend,system-switch-user-symbolic"
 ) | jgmenu --simple --config-file=${config_file}
