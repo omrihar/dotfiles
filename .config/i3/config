@@ -294,7 +294,6 @@ gaps inner 20
 # Startup applications
 exec --no-startup-id i3-msg 'workspace $ws4; exec /home/omri/Downloads/franz-5.0.0-beta.15-x86_64.AppImage" %U; exec slack; layout tabbed; worskapce $ws1'
 exec --no-startup-id i3-msg 'workspace $ws10; exec spotify; worskapce $ws1'
-exec --no-startup-id i3-msg 'workspace $ws2; exec jump hmm; exec gvim -S ~/vim_session.vim; workspace $ws1'
 exec guake
 exec dropbox
 #exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 

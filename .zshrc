@@ -179,6 +179,7 @@ export VIRTUAL_ENV_DISABLE_PROMPT=
 export PIPENV_MAX_DEPTH=5
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH:$HOME/opt/splunk/bin"
+export XDG_CONFIG_HOME="$HOME/.config"
 
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
         source /etc/profile.d/vte.sh
