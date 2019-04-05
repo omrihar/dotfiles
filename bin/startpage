@@ -1,0 +1,3 @@
+#!/bin/bash
+
+pushd ~/.config/startpage; python -m http.server 55555; popd;

@@ -101,11 +101,11 @@ set $ws1 "1:  Terminal "
 set $ws2 "2:  Code "
 set $ws3 "3:  Firefox "
 set $ws4 "4:  Communications "
-set $ws5 "5:  HMM"
+set $ws5 "5:  CNHI"
 set $ws6 "6:  Presentations"
 set $ws7 "7:  Bugs"
-set $ws8 "8"
-set $ws9 "9"
+set $ws8 "8: Slack"
+set $ws9 "9: Franz"
 set $ws10 "10:  Music "
 
 # switch to workspace
@@ -281,8 +281,8 @@ workspace $ws3 output primary
 workspace $ws4 output eDP1
 workspace $ws10 output primary
 
-assign [class="Slack"] → $ws4
-assign [class="Franz"] → $ws4
+assign [class="Slack"] → $ws8
+assign [class="Franz"] → $ws9
 assign [class="Spotify"] → $ws10
 assign [class="Firefox"] → $ws3
 
@@ -304,6 +304,9 @@ exec_always --no-startup-id feh --bg-fill --randomize ~/wallpapers
 #exec --no-startup-id conky -c /home/omri/.config/i3/conky_solarized
 exec --no-startup-id nm-applet
 bindsym $mod+o exec --no-startup-id compton-trans -c -o 100
+
+# start my startpage
+exec --no-startup-id ~/bin/startpage
 
 focus_follows_mouse no
 workspace_auto_back_and_forth yes
