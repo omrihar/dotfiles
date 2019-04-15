@@ -100,7 +100,7 @@ bindsym $mod+a focus parent
 set $ws1 "1:  Terminal "
 set $ws2 "2:  Code "
 set $ws3 "3:  Firefox "
-set $ws4 "4:  Communications "
+set $ws4 "4:  Coding "
 set $ws5 "5:  CNHI"
 set $ws6 "6:  Presentations"
 set $ws7 "7:  Bugs"
@@ -217,10 +217,14 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Some custom shortcuts added by Omri
-#bindsym $sup+l exec i3lock -e -i /home/omri/Pictures/i3/windows.png -p win
-bindsym $sup+l exec "playerctl stop ; i3lock-fancy -f Fira-Sans-Light -p -t \\"Sorry, I'm Locked...\\" -- scrot"
-bindsym $sup+s exec "playerctl stop ; i3lock-fancy -f Fira-Sans-Light -p -t \\"Sorry, I'm Locked...\\" -- scrot && sudo systemctl suspend"
-exec --no-startup-id xautolock -detectsleep -time 30 -locker "playerctl stop ; i3lock-fancy -f Fira-Sans-Light -p -t \\"Sorry, I'm Locked...\\" -- scrot"
+bindsym $sup+l exec "playerctl stop ; betterlockscreen -l pixel"
+bindsym $sup+s exec "playerctl stop ; betterlockscreen -s pixel"
+exec --no-startup-id xautolock -detectsleep -time 30 -locker "playerctl stop ; betterlockscreen -l pixel"
+
+# Old settings with i3lock-fancy
+#bindsym $sup+l exec "playerctl stop ; i3lock-fancy -f Fira-Sans-Light -p -t \\"Sorry, I'm Locked...\\" -- scrot"
+#bindsym $sup+s exec "playerctl stop ; i3lock-fancy -f Fira-Sans-Light -p -t \\"Sorry, I'm Locked...\\" -- scrot && sudo systemctl suspend"
+#exec --no-startup-id xautolock -detectsleep -time 30 -locker "playerctl stop ; i3lock-fancy -f Fira-Sans-Light -p -t \\"Sorry, I'm Locked...\\" -- scrot"
 
 # Use mod+x to create a screenshot
 bindsym Print exec --no-startup-id maim -s --format=png /dev/stdout | xclip -selection clipboard -t image/png -i

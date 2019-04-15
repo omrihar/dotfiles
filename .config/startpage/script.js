@@ -29,7 +29,8 @@ const MASTER_MAP = [
             {"name": "Confluence CNHI", "shortcutKey": "d", "url": "https://schmiedeone.atlassian.net/wiki/spaces/C/pages/edit/1041596417?draftId=1041268744&draftShareId=b2f590b7-d06f-4020-a79d-39dd5a9f24fc&"},
             {"name": "GitKraken", "shortcutKey": "l", "url": "gitkraken://test"},
             {"name": "Mongo Compass", "shortcutKey": "a", "url": "mc://test"},
-
+            {"name": "Click-dummy", "shortcutKey": "b", "url": "https://marvelapp.com/b1gd5c4/screen/54859537"},
+            {"name": "Team Drive", "url": "https://idp.mycloud.com/idp/SSO.saml2?SAMLRequest=lVPLbqMwFN3PV1jeh5cIJVagyqSqplJHiQKdRTeVay6tJbAZX5Omfz8GEolFp2pXyPY9556HWF%2Bf2oYcwaDUKqOhF1ACSuhKqpeMPpS3i5Re5z%2FWyNumY5vevqoD%2FO0BLdkggrEOttUK%2BxZMAeYoBTwc7jP6am2HzPd5J723KnrRntDtcPLdCt84vD9QPrnNsn6n5MbdSMXtqOICllXnte%2Bi0X01wt3ZL4qdNyAjSm61ETBKyqg1PVByd5PRp7he8qRK65gnKQ9CSKJ4%2BRzEIr5KllGVrNwY7jmiPEJGa97gAETs4U6h5cpmNArC1SKIF0FaBilbhiwOvatV%2BkjJ3mirhW5%2BSjUl1BvFNEeJTPEWkFnBis3vexZ5AXuehpD9Ksv9Yr8rSkr%2BXJKOhqRd9grZmO3nVN15L83PTYyCzdcJ%2BKUsmu%2BM%2B2w6ea5r7c8ZJ%2F6oY%2BeWoRoDdhVbOFmy1W3HjcTBAZy4sHMP0fdMsDnztnEKD1DP6L5s6NMxwcRA7a6Hzt%2B0qYYOQThnpeEKO23sFMGHevLp7X%2BB5Jf05n9G%2Fg8%3D&RelayState=d34e6a406efb0f57c21de7705b3bdce9d3a2866bed4be291fa648a1d35929f80f43dae62f40cbfe0142162b0ab49d332db83ba19c58d1da4024b78a264e101c8__webfilesReturnUrlToken_webfiles&action&brand=webfiles"},
         ]
     },
     {
