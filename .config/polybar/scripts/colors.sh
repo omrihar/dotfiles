@@ -11,6 +11,12 @@ PID2="$(pgrep -u $UID -x polybar | tail -n 1)"
 LAUNCH1="polybar-msg -p $PID1 cmd restart"
 LAUNCH2="polybar-msg -p $PID2 cmd restart"
 
+#LAUNCH=""
+#for id in $(pgrep -u $UID -x polybar); do
+	    #LAUNCH="polybar-msg -p $id cmd restart ; $LAUNCH"
+#done
+#echo $LAUNCH
+
 ## Alt..
 #LAUNCH="pkill -USR1 polybar"
 
