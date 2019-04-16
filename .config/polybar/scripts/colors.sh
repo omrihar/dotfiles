@@ -5,13 +5,9 @@
 
 PDIR="$HOME/.config/polybar"
 
-PID1="$(pgrep -u $UID -x polybar | head -n 1)"
-PID2="$(pgrep -u $UID -x polybar | tail -n 1)"
 
-LAUNCH1="polybar-msg -p $PID1 cmd restart"
-LAUNCH2="polybar-msg -p $PID2 cmd restart"
 
-#LAUNCH=""
+LAUNCH="polybar-msg cmd restart"
 #for id in $(pgrep -u $UID -x polybar); do
 	    #LAUNCH="polybar-msg -p $id cmd restart ; $LAUNCH"
 #done
@@ -31,8 +27,7 @@ sed -i -e 's/mb = .*/mb = #0a0a0a/g' $PDIR/colors.ini
 sed -i -e 's/mgf = .*/mgf = #0a0a0a/g' $PDIR/colors.ini
 sed -i -e 's/mf = .*/mf = #fdd835/g' $PDIR/colors.ini
 # Restarting polybar
-$LAUNCH1 &
-$LAUNCH2 &
+$LAUNCH &
 
 elif  [[ $1 = "-mode2" ]]; then
 # Replacing colors
@@ -45,8 +40,7 @@ sed -i -e 's/mb = .*/mb = #263238/g' $PDIR/colors.ini
 sed -i -e 's/mgf = .*/mgf = #263238/g' $PDIR/colors.ini
 sed -i -e 's/mf = .*/mf = #00BCD4/g' $PDIR/colors.ini
 # Restarting polybar
-$LAUNCH1 &
-$LAUNCH2 &
+$LAUNCH &
 
 elif  [[ $1 = "-mode3" ]]; then
 # Replacing colors
@@ -59,8 +53,7 @@ sed -i -e 's/mb = .*/mb = #112526/g' $PDIR/colors.ini
 sed -i -e 's/mgf = .*/mgf = #112526/g' $PDIR/colors.ini
 sed -i -e 's/mf = .*/mf = #EE7313/g' $PDIR/colors.ini
 # Restarting polybar
-$LAUNCH1 &
-$LAUNCH2 &
+$LAUNCH &
 
 elif  [[ $1 = "-mode4" ]]; then
 # Replacing colors
@@ -73,8 +66,7 @@ sed -i -e 's/mb = .*/mb = #461320/g' $PDIR/colors.ini
 sed -i -e 's/mgf = .*/mgf = #461320/g' $PDIR/colors.ini
 sed -i -e 's/mf = .*/mf = #fdd835/g' $PDIR/colors.ini
 # Restarting polybar
-$LAUNCH1 &
-$LAUNCH2 &
+$LAUNCH &
 
 elif  [[ $1 = "-mode5" ]]; then
 # Replacing colors
@@ -87,8 +79,7 @@ sed -i -e 's/mb = .*/mb = #092F1C/g' $PDIR/colors.ini
 sed -i -e 's/mgf = .*/mgf = #092F1C/g' $PDIR/colors.ini
 sed -i -e 's/mf = .*/mf = #fdd835/g' $PDIR/colors.ini
 # Restarting polybar
-$LAUNCH1 &
-$LAUNCH2 &
+$LAUNCH &
 
 elif  [[ $1 = "-mode6" ]]; then
 # Replacing colors
@@ -101,8 +92,7 @@ sed -i -e 's/mb = .*/mb = #003C3C/g' $PDIR/colors.ini
 sed -i -e 's/mgf = .*/mgf = #003C3C/g' $PDIR/colors.ini
 sed -i -e 's/mf = .*/mf = #00acc1/g' $PDIR/colors.ini
 # Restarting polybar
-$LAUNCH1 &
-$LAUNCH2 &
+$LAUNCH &
 
 else
 echo "Available options:
