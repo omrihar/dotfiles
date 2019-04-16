@@ -304,7 +304,8 @@ exec dropbox
 #
 exec compton
 #exec_always --no-startup-id ~/.fehbg
-exec_always --no-startup-id feh --bg-fill --randomize ~/wallpapers
+#exec_always --no-startup-id feh --bg-fill --randomize ~/wallpapers
+exec_always --no-startup-id ~/bin/set_wallpaper
 #exec --no-startup-id conky -c /home/omri/.config/i3/conky_solarized
 exec --no-startup-id nm-applet
 bindsym $mod+o exec --no-startup-id compton-trans -c -o 100
