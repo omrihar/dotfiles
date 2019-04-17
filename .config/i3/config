@@ -238,8 +238,8 @@ bindsym $mod+m move workspace to output left
 bindsym $mod+p move workspace to output DP1
 
 # Change layout to single monitor mode
-bindsym $sup+n exec /home/omri/.screenlayout/laptop.sh
-bindsym $sup+m exec /home/omri/.screenlayout/schmiede.sh
+bindsym $sup+n exec "/home/omri/.screenlayout/laptop.sh ; i3-msg restart"
+bindsym $sup+m exec "/home/omri/.screenlayout/schmiede.sh ; i3-msg restart"
 
 # Multimedia keys support
 # Audio
