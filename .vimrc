@@ -345,7 +345,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_javascript_eslint_exe = 'npm run lint --'
-let g:syntastic_python_checkers = ['prospector']
+let g:syntastic_python_checkers = ["pep8","pep257","pylint"]
 
 " Emmet configuration
 "let g:user_emmet_leader_key = '<C-y>'
@@ -487,7 +487,7 @@ endfunction
 
 " temporary settings for pandoc
 let g:pandoc#command#autoexec_command='Pandoc beamer -Vtheme:metropolis --pdf-engine=xelatex --slide-level=2'
-let g:pandoc#command#autoexec_on_writes=1
+let g:pandoc#command#autoexec_on_writes=0
 "let g:pandoc#command#autoexec_command='Pandoc pdf -f gfm'
 "
 
@@ -496,5 +496,9 @@ let g:AutoPairsFastWrap = '<Ctrl+e>'
 au FileType python let g:AutoPairs["'''"] = "'''"
 au FileType python let g:AutoPairs['"""'] = '"""'
 au FileType python let g:AutoPairs["f'"] = "'"
+
+au FileType pandoc let g:AutoPairs["{{"] = "}}"
+au FileType pandoc let g:AutoPairs["{{<"] = ">}}"
+au FileType pandoc set formatoptions-=t
 
 set mouse=a

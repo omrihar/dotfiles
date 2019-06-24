@@ -25,7 +25,7 @@ body {
 }
 
 #logo {
-    padding-top: 25vh;
+    padding-top: 15vh;
     text-align: center;
 }
 #logo h1 {
@@ -106,7 +106,7 @@ a {
 
 #search {
     text-align: center;
-    margin-top: 150px;
+    margin-top: 50px;
     padding: 50px;
     width: 80%;
     background: transparent;

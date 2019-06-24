@@ -4,7 +4,7 @@ font = Roboto Mono for Powerline 14
 
 [colors]
 # hard contrast: background = #1d2021
-background = rgba(40,40,40,0.70)
+background = rgba(40,40,40,0.90)
 # soft contrast: background = #32302f
 foreground = #ebdbb2
 foreground_bold = #ebdbb2

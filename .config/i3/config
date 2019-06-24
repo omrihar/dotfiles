@@ -43,7 +43,9 @@ bindsym $mod+Shift+q kill
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-bindsym $mod+d exec rofi -show combi -combi-modi drun#run -modi combi -show-icons
+#bindsym $mod+d exec rofi -show combi -combi-modi drun#run -modi combi -show-icons
+#
+bindsym $mod+d exec --no-startup-id ulauncher
 
 # change focus
 bindsym $mod+h focus left
@@ -240,6 +242,7 @@ bindsym $mod+p move workspace to output DP1
 # Change layout to single monitor mode
 bindsym $sup+n exec "/home/omri/.screenlayout/laptop.sh ; i3-msg restart"
 bindsym $sup+m exec "/home/omri/.screenlayout/schmiede.sh ; i3-msg restart"
+bindsym $sup+c exec "/home/omri/.screenlayout/coworking.sh ; i3-msg restart"
 
 # Multimedia keys support
 # Audio
@@ -266,7 +269,7 @@ exec "setxkbmap -layout us,il,de -variant ,,qwerty -option 'grp:menu_toggle'"
 for_window [instance="guake"] floating enable
 for_window [class="Yad"] floating enable
 for_window [class="Eog"] floating enable
-for_window [class="Nemo"] floating enable
+#for_window [class="Nemo"] floating enable
 for_window [class="Blueberry.py"] floating enable
 for_window [class="tablet.py"] floating enable
 
@@ -282,7 +285,7 @@ exec --no-startup-id ssh-agent
 workspace $ws1 output primary
 workspace $ws2 output primary
 workspace $ws3 output primary
-workspace $ws4 output eDP1
+workspace $ws4 output primary
 workspace $ws10 output primary
 
 assign [class="Slack"] → $ws8

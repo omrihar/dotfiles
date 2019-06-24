@@ -120,6 +120,7 @@ alias mux="tmuxinator"
 alias prp="pipenv run python"
 alias pi="pipenv install"
 alias pipython="pipenv run ipython"
+alias flask="pipenv run flask"
 alias mongokill="kill $(pg mongo | grep 'MongoDB Compass' | head -1 | awk '{print $2}')"
 
 # Allow using Ctrl+S in vim in the terminal without freezing it
