@@ -219,9 +219,9 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Some custom shortcuts added by Omri
-bindsym $sup+l exec "playerctl stop ; betterlockscreen -l pixel"
-bindsym $sup+s exec "playerctl stop ; betterlockscreen -s pixel"
-exec --no-startup-id xautolock -detectsleep -time 30 -locker "playerctl stop ; betterlockscreen -l pixel"
+bindsym $sup+l exec "playerctl -i vlc stop ; betterlockscreen -l pixel"
+bindsym $sup+s exec "playerctl -i vlc stop ; betterlockscreen -s pixel"
+exec --no-startup-id xautolock -detectsleep -time 30 -locker "playerctl -i vlc stop ; betterlockscreen -l pixel"
 
 # Old settings with i3lock-fancy
 #bindsym $sup+l exec "playerctl stop ; i3lock-fancy -f Fira-Sans-Light -p -t \\"Sorry, I'm Locked...\\" -- scrot"
@@ -249,10 +249,10 @@ bindsym $sup+c exec "/home/omri/.screenlayout/coworking.sh ; i3-msg restart"
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
-bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
-bindsym XF86AudioStop exec --no-startup-id playerctl stop
-bindsym XF86AudioPrev exec --no-startup-id playerctl previous
-bindsym XF86AudioNext exec --no-startup-id playerctl next
+bindsym XF86AudioPlay exec --no-startup-id playerctl -i vlc play-pause
+bindsym XF86AudioStop exec --no-startup-id playerctl -i vlc stop
+bindsym XF86AudioPrev exec --no-startup-id playerctl -i vlc previous
+bindsym XF86AudioNext exec --no-startup-id playerctl -i vlc next
 
 # Screen brightness
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20
