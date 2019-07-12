@@ -291,7 +291,7 @@ workspace $ws10 output primary
 assign [class="Slack"] → $ws8
 assign [class="Franz"] → $ws9
 assign [class="Spotify"] → $ws10
-assign [class="Firefox"] → $ws3
+#assign [class="Firefox"] → $ws3
 
 # Set default workspace gaps (only for $ws1 atm)
 for_window [class="^.*"] border pixel 1
