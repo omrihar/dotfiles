@@ -282,6 +282,20 @@ function ToggleFullScreen()
   call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")
 endfunction
 
+" Toggle Hebrew insert mode
+func! ToggleHebrew()
+    if &rl
+        set norl
+        set keymap=
+    else
+        set rl
+        set keymap=hebrew
+    end
+endfunc
+
+imap <F4> <c-o>:call ToggleHebrew()<cr>
+map <F4> :call ToggleHebrew()<cr>
+
 " F-mappings
 nnoremap <F2> :NERDTreeToggle<CR>
 nnoremap <F3> :UndotreeToggle<CR>
@@ -502,3 +516,6 @@ au FileType pandoc let g:AutoPairs["{{<"] = ">}}"
 au FileType pandoc set formatoptions-=t
 
 set mouse=a
+
+" Save file with sudo rights by using :w!!
+cmap w!! w !sudo tee > /dev/null %

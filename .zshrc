@@ -129,6 +129,7 @@ alias vim="stty -ixon -ixoff && vim"
 # Simple dotfile management, a la:
 #https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/
 alias conf='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias kr="knowledge_repo --repo postgresql://omri:omri@localhost/omri:kr"
 
 apnotify() {
   ~/anaconda3/bin/python $1

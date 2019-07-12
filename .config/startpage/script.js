@@ -39,7 +39,8 @@ const MASTER_MAP = [
         "items":[
             {"name": "Mind Map", "shortcutKey": "h", "url": "https://coggle.it/diagram/XPnkTyopRLSeQzgm/t/grimme-data-lab-schmiede-one-bonn"},
             {"name": "First Doc", "shortcutKey": "w", "url": "https://docs.google.com/document/d/1URq7QVODXQpoU2tkoveoLomD2p4wvRoHfTN6lCzpe_k/edit#"},
-            {"name": "ML Series", "shortcutKey": "n", "url": "https://www.youtube.com/playlist?list=PLD0F06AA0D2E8FFBA"}
+            {"name": "ML Series", "shortcutKey": "n", "url": "https://www.youtube.com/playlist?list=PLD0F06AA0D2E8FFBA"},
+            {"name": "Confernces", "shortcutKey": null, "url": "https://www.kdnuggets.com/meetings/index.html"}
         ]
     }
 ]
