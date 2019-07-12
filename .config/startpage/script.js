@@ -40,7 +40,8 @@ const MASTER_MAP = [
             {"name": "Mind Map", "shortcutKey": "h", "url": "https://coggle.it/diagram/XPnkTyopRLSeQzgm/t/grimme-data-lab-schmiede-one-bonn"},
             {"name": "First Doc", "shortcutKey": "w", "url": "https://docs.google.com/document/d/1URq7QVODXQpoU2tkoveoLomD2p4wvRoHfTN6lCzpe_k/edit#"},
             {"name": "ML Series", "shortcutKey": "n", "url": "https://www.youtube.com/playlist?list=PLD0F06AA0D2E8FFBA"},
-            {"name": "Confernces", "shortcutKey": null, "url": "https://www.kdnuggets.com/meetings/index.html"}
+            {"name": "Confernces", "shortcutKey": null, "url": "https://www.kdnuggets.com/meetings/index.html"},
+            {"name": "Videos", "shortcutKey": null, "url": "https://www.analyticsvidhya.com/blog/2019/07/11-data-science-videos-every-data-scientist-must-watch/"},
         ]
     }
 ]
@@ -83,13 +84,15 @@ function setupGroups(){
             link.setAttribute("href", curItemData.url);
             pContainer.appendChild(link);
 
-            let shortcutDisplay = document.createElement("span");
-            shortcutDisplay.innerHTML = curItemData.shortcutKey;
-            shortcutDisplay.className = "shortcut";
-            shortcutDisplay.style.animation = "none";
-            pContainer.appendChild(shortcutDisplay);
+            if (curItemData.shortcutKey !== null && curItemData.shortcutKey !== undefined){
+                let shortcutDisplay = document.createElement("span");
+                shortcutDisplay.innerHTML = curItemData.shortcutKey;
+                shortcutDisplay.className = "shortcut";
+                shortcutDisplay.style.animation = "none";
+                pContainer.appendChild(shortcutDisplay);
 
-            getUrl[curItemData.shortcutKey] = curItemData.url
+                getUrl[curItemData.shortcutKey] = curItemData.url
+            }
         }
     }
 }
