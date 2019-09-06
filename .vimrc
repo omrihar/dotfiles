@@ -95,6 +95,9 @@ Plug 'wavded/vim-stylus'
 " Syntax checking
 Plug 'vim-syntastic/syntastic'
 
+" Syntax highlighting
+Plug 'sheerun/vim-polyglot'
+
 " Cool stuff
 Plug 'metakirby5/codi.vim'
 Plug 'RRethy/vim-illuminate'
@@ -143,6 +146,8 @@ endif
 au FileType python
             \ let &makeprg=python_executable . ' %' |
             \ set autowrite
+
+au FileType python set nospell
 
 " Appearance (colorscheme and fonts)
 set guifont=Roboto\ Mono\ for\ Powerline\ 14

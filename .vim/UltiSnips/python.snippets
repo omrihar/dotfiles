@@ -25,3 +25,10 @@ endsnippet
 snippet opt "Optional with default None"
 Optional[$1] = None$0
 endsnippet
+
+snippet trns "Translation hybrid"
+${1:field}_tr = Column(MutableDict.as_mutable(JSONB))
+$1 = translation_hybrid($1_tr)
+$0
+endsnippet
+	
