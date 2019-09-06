@@ -37,6 +37,7 @@ Plug 'kien/rainbow_parentheses.vim'
 Plug 'KKPMW/distilled-vim'
 Plug 'connorholyday/vim-snazzy'
 Plug 'morhetz/gruvbox'
+Plug 'sainnhe/gruvbox-material'
 
 Plug 'majutsushi/tagbar'
 
@@ -80,6 +81,7 @@ Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'tell-k/vim-autopep8'
 Plug 'jeetsukumaran/vim-pythonsense'
 Plug 'alfredodeza/pytest.vim'
+Plug 'Glench/Vim-Jinja2-Syntax'
 
 " JavaScript stuff
 Plug 'posva/vim-vue'
@@ -112,6 +114,9 @@ Plug 'andymass/vim-tradewinds'
 " Graphviz dot files
 Plug 'wannesm/wmgraphviz.vim'
 
+" Plugin to perform diff on parts of files
+Plug 'AndrewRadev/linediff.vim'
+
 call plug#end()
 
 nmap ; :
@@ -119,9 +124,9 @@ nmap ; :
 set encoding=utf-8
 
 " Simple session management
-let g:sessions_dir = '~/vim-sessions'
-exec 'nnoremap <Leader>ss :mks! ' . g:sessions_dir . '/*.vim<C-D><BS><BS><BS><BS><BS>'
-exec 'nnoremap <Leader>sr :so ' . g:sessions_dir . '/*.vim<C-D><BS><BS><BS><BS><BS>'
+"let g:sessions_dir = '~/vim-sessions'
+"exec 'nnoremap <Leader>ss :mks! ' . g:sessions_dir . '/*.vim<C-D><BS><BS><BS><BS><BS>'
+"exec 'nnoremap <Leader>sr :so ' . g:sessions_dir . '/*.vim<C-D><BS><BS><BS><BS><BS>'
 
 " Make vim aware of pipenv
 let pipenv_venv_path = system('pipenv --venv')
@@ -140,14 +145,12 @@ au FileType python
             \ set autowrite
 
 " Appearance (colorscheme and fonts)
-let g:seoul256_background=233
 set guifont=Roboto\ Mono\ for\ Powerline\ 14
-"colorscheme seoul256
-let g:SnazzyTransparent = 1
-"colorscheme snazzy
-colorscheme gruvbox
+set termguicolors
+let g:gruvbox_material_transparent_background = 1
 set background=dark
-let g:airline_theme='gruvbox'
+colorscheme gruvbox-material
+let g:airline_theme='gruvbox_material'
 
 " Make background transparent
 autocmd VimEnter * hi Normal ctermbg=none
@@ -217,7 +220,6 @@ set bo=all
 
 " Airline configuration
 let g:airline_section_z = '%p%%'
-let g:airline_section_a = ''
 let g:airline_powerline_fonts = 1
 
 " Add some window resize functionality
@@ -519,3 +521,15 @@ set mouse=a
 
 " Save file with sudo rights by using :w!!
 cmap w!! w !sudo tee > /dev/null %
+
+set autoread
+
+" Triger `autoread` when files changes on disk
+" https://unix.stackexchange.com/questions/149209/refresh-changed-content-of-file-opened-in-vim/383044#383044
+" https://vi.stackexchange.com/questions/13692/prevent-focusgained-autocmd-running-in-command-line-editing-mode
+autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
+" Notification after file change
+" https://vi.stackexchange.com/questions/13091/autocmd-event-for-autoread
+autocmd FileChangedShellPost *
+  \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
+
