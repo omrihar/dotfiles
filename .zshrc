@@ -67,16 +67,19 @@ plugins=(git archlinux autopep8 common-aliases vi-mode jump github gitignore ran
 
 # User configuration
 
-  export PATH="$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
+  export PATH="$HOME/bin:$HOME/opt/android-studio/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
   #export PATH="~/Dropbox/scripts:~/Downloads/hdf-java-2.10/usr/bin:$PATH"
   #export PATH="$HOME/bin:$PATH"
   #export PATH="$HOME/.local/bin:$PATH"
   #export PATH="$HOME/Dropbox/scripts:$PATH"
   #export PATH="$HOME/pandoc-crossref/.cabal-sandbox/bin:$PATH"
-  export PATH="$PATH:$HOME/anaconda3/bin"
   export PATH="$PATH:$HOME/.local/bin"
   export PATH="$PATH:$HOME/.gem/ruby/2.5.0/bin"
   export PATH="$PATH:$HOME/.gem/ruby/2.4.0/bin"
+  export ANDROID_HOME="$HOME/Android/Sdk"
+  export ANDROID_SDK_ROOT="$HOME/Android/Sdk"
+  export PATH="$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools"
+  export PATH="$PATH:$ANDROID_SDK_ROOT/emulator:$ANDROID_SDK_ROOT/tools"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # Tell python to load stuff in this script on startup
@@ -114,8 +117,6 @@ alias wg="wget -O tempfile www.google.com && rm tempfile"
 alias rm="rm"  # override rm -i requiring confirmation
 alias pg="ps aux | grep -v grep | grep "
 alias jn="jupyter notebook"
-alias ap="~/anaconda3/bin/python"
-alias apip="~/anaconda3/bin/pip"
 alias mux="tmuxinator"
 alias prp="pipenv run python"
 alias pi="pipenv install"
@@ -130,11 +131,6 @@ alias vim="stty -ixon -ixoff && vim"
 #https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/
 alias conf='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias kr="knowledge_repo --repo postgresql://omri:omri@localhost/omri:kr"
-
-apnotify() {
-  ~/anaconda3/bin/python $1
-  notify-send "Execution finished!"  "$1 finished running."
-}
 
 thesis() {
   jump thesis
@@ -199,3 +195,5 @@ fi
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [[ -f /home/omri/.config/yarn/global/node_modules/tabtab/.completions/sls.zsh ]] && . /home/omri/.config/yarn/global/node_modules/tabtab/.completions/sls.zsh
+
+eval "$(hub alias -s)"
