@@ -219,8 +219,9 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Some custom shortcuts added by Omri
-bindsym $sup+l exec "playerctl -i vlc stop ; betterlockscreen -l pixel"
+bindsym $sup+l exec "playerctl -i vlc stop ; $HOME/.i3/i3lock-multimonitor/lock"
 bindsym $sup+s exec "playerctl -i vlc stop ; betterlockscreen -s pixel"
+bindsym $sup+h exec "playerctl -i vlc stop ; systemctl hibernate"
 exec --no-startup-id xautolock -detectsleep -time 30 -locker "playerctl -i vlc stop ; betterlockscreen -l pixel"
 
 # Old settings with i3lock-fancy
@@ -236,8 +237,14 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 # Move workspaces to other displays
-bindsym $mod+m move workspace to output left
-bindsym $mod+p move workspace to output DP1
+#bindsym $mod+m move workspace to output eDP1
+#bindsym $mod+p move workspace to output DP1
+
+# move current workspace between monitors
+bindsym $mod+Control+h move workspace to output left
+bindsym $mod+Control+j move workspace to output down
+bindsym $mod+Control+k move workspace to output up
+bindsym $mod+Control+l move workspace to output right
 
 # Change layout to single monitor mode
 bindsym $sup+n exec "/home/omri/.screenlayout/laptop.sh ; i3-msg restart"
@@ -261,7 +268,8 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20
 exec /home/omri/.screenlayout/schmiede.sh
 
 # Keyboard layout control
-exec "setxkbmap -layout us,il,de -variant ,,qwerty -option 'grp:menu_toggle'"
+#exec "setxkbmap -layout us,il,de -variant ,,qwerty -option 'grp:menu_toggle'"
+exec "setxkbmap -layout us,il -option 'grp:menu_toggle,compose:caps'"
 #bindcode $sup+31 exec --no-startup-id "setxkbmap -layout il,us,de -variant ,,qwerty -option 'grp:win_space_toggle'"
 #bindcode $sup+26 exec --no-startup-id "setxkbmap -layout us,il,de -variant ,,qwerty -option 'grp:win_space_toggle'"
 #bindcode $sup+40 exec --no-startup-id "setxkbmap -layout de,us,il -variant qwerty,, -option 'grp:win_space_toggle'"

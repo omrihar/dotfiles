@@ -7,6 +7,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-eunuch'
 
 " Code Completion
 Plug 'Valloric/YouCompleteMe', {'do': './install.py'}
@@ -156,6 +157,7 @@ let g:gruvbox_material_transparent_background = 1
 set background=dark
 colorscheme gruvbox-material
 let g:airline_theme='gruvbox_material'
+set nospell
 
 " Make background transparent
 autocmd VimEnter * hi Normal ctermbg=none

@@ -32,3 +32,27 @@ $1 = translation_hybrid($1_tr)
 $0
 endsnippet
 	
+snippet col "SQLAlchemy Column" 
+${1:field} = Column(${2:String}, nullable=${3:True})
+$0
+endsnippet
+
+snippet api "Api endpoint boilerplate code"
+# Standard Library
+import logging
+from typing import List
+
+# FastAPI
+from fastapi import APIRouter, Depends, HTTPException
+
+# SQLAlchemy
+from sqlalchemy.orm import Session
+
+# CNHI App
+from app import crud
+
+logger = logging.getLogger(__name__)
+
+router = APIRouter()
+$0
+endsnippet

@@ -161,7 +161,7 @@ _present() {
 }
 compdef _present present
 
-export PATH="$HOME/.yarn/bin:$PATH"
+#export PATH="$HOME/.yarn/bin:$PATH"
 
 # Stuff for virtualenvwrapper to work
 export WORKON_DIR=$HOME/.virtualenvs
