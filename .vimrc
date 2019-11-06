@@ -86,7 +86,7 @@ Plug 'tell-k/vim-autopep8'
 Plug 'jeetsukumaran/vim-pythonsense'
 Plug 'alfredodeza/pytest.vim'
 Plug 'Glench/Vim-Jinja2-Syntax'
-"Plug 'psf/black'
+Plug 'psf/black'
 
 " JavaScript stuff
 Plug 'posva/vim-vue'
@@ -141,7 +141,7 @@ set encoding=utf-8
 
 " Make vim aware of pipenv
 let pipenv_venv_path = system('pipenv --venv')
-if shell_error == 0
+if v:shell_error == 0
     let venv_path = substitute(pipenv_venv_path, '\n', '', '')
     let g:ycm_python_binary_path = venv_path . '/bin/python'
     "let python_executable = venv_path . '/bin/python'
