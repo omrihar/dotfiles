@@ -65,6 +65,9 @@ Plug 'reedes/vim-colors-pencil'
 " Tex
 Plug 'lervag/vimtex'
 
+" CSV
+Plug 'chrisbra/csv.vim'
+
 " Pandoc
 Plug 'vim-pandoc/vim-pandoc' | Plug 'vim-pandoc/vim-pandoc-syntax' | Plug 'vim-pandoc/vim-pandoc-after'
 
@@ -83,6 +86,7 @@ Plug 'tell-k/vim-autopep8'
 Plug 'jeetsukumaran/vim-pythonsense'
 Plug 'alfredodeza/pytest.vim'
 Plug 'Glench/Vim-Jinja2-Syntax'
+"Plug 'psf/black'
 
 " JavaScript stuff
 Plug 'posva/vim-vue'
@@ -120,6 +124,9 @@ Plug 'wannesm/wmgraphviz.vim'
 
 " Plugin to perform diff on parts of files
 Plug 'AndrewRadev/linediff.vim'
+
+" Plugin to send code to slack
+Plug 'prashantjois/vim-slack'
 
 call plug#end()
 
@@ -540,3 +547,5 @@ autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checkti
 autocmd FileChangedShellPost *
   \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
 
+let g:slack_vim_token="xoxp-165610094471-166129030118-818097538567-3a5e0188af70676caa394c50ad980512"
+let g:slack_email_domain="schmiede.one"

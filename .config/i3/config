@@ -297,7 +297,7 @@ workspace $ws4 output primary
 workspace $ws10 output primary
 
 assign [class="Slack"] → $ws8
-assign [class="Franz"] → $ws9
+#assign [class="Franz"] → $ws9
 assign [class="Spotify"] → $ws10
 #assign [class="Firefox"] → $ws3
 

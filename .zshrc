@@ -197,3 +197,5 @@ fi
 [[ -f /home/omri/.config/yarn/global/node_modules/tabtab/.completions/sls.zsh ]] && . /home/omri/.config/yarn/global/node_modules/tabtab/.completions/sls.zsh
 
 eval "$(hub alias -s)"
+
+source /usr/share/nvm/init-nvm.sh
