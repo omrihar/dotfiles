@@ -95,7 +95,7 @@ source $ZSH/oh-my-zsh.sh
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
-  export EDITOR='vim'
+  export EDITOR='nvim'
 fi
 
 # Compilation flags
@@ -126,6 +126,7 @@ alias mongokill="kill $(pg mongo | grep 'MongoDB Compass' | head -1 | awk '{prin
 
 # Allow using Ctrl+S in vim in the terminal without freezing it
 alias vim="stty -ixon -ixoff && vim"
+alias nvim="stty -ixon -ixoff && nvim"
 
 # Simple dotfile management, a la:
 #https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/

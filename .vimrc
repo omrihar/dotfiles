@@ -126,7 +126,7 @@ Plug 'wannesm/wmgraphviz.vim'
 Plug 'AndrewRadev/linediff.vim'
 
 " Plugin to send code to slack
-Plug 'prashantjois/vim-slack'
+"Plug 'prashantjois/vim-slack'
 
 call plug#end()
 
@@ -547,5 +547,8 @@ autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checkti
 autocmd FileChangedShellPost *
   \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
 
-let g:slack_vim_token="xoxp-165610094471-166129030118-818097538567-3a5e0188af70676caa394c50ad980512"
-let g:slack_email_domain="schmiede.one"
+autocmd BufWritePre *.py execute ':Isort'
+if has('nvim')
+    let g:black_linelength=80
+    autocmd BufWritePre *.py execute ':Black'
+endif
