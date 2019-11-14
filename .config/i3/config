@@ -219,10 +219,17 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Some custom shortcuts added by Omri
-bindsym $sup+l exec "playerctl -i vlc stop ; $HOME/.i3/i3lock-multimonitor/lock"
-bindsym $sup+s exec "playerctl -i vlc stop ; betterlockscreen -s pixel"
-bindsym $sup+h exec "playerctl -i vlc stop ; systemctl hibernate"
-exec --no-startup-id xautolock -detectsleep -time 30 -locker "playerctl -i vlc stop ; betterlockscreen -l pixel"
+bindsym $sup+l exec "$HOME/.i3/i3lock-multimonitor/lock"
+bindsym $sup+s exec "betterlockscreen -s pixel"
+bindsym $sup+h exec "systemctl hibernate"
+exec --no-startup-id xautolock -detectsleep -time 30 -locker "betterlockscreen -l pixel"
+
+# Settings with stopping spotify
+#bindsym $sup+l exec "playerctl -i vlc stop ; $HOME/.i3/i3lock-multimonitor/lock"
+#bindsym $sup+s exec "playerctl -i vlc stop ; betterlockscreen -s pixel"
+#bindsym $sup+h exec "playerctl -i vlc stop ; systemctl hibernate"
+#exec --no-startup-id xautolock -detectsleep -time 30 -locker "playerctl -i vlc stop ; betterlockscreen -l pixel"
+
 
 # Old settings with i3lock-fancy
 #bindsym $sup+l exec "playerctl stop ; i3lock-fancy -f Fira-Sans-Light -p -t \\"Sorry, I'm Locked...\\" -- scrot"
