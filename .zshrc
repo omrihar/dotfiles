@@ -110,9 +110,9 @@ fi
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconfig="vim ~/.zshrc"
-alias i3config="(cd ~/.config/i3 && vim config)"
-alias ohmyzsh="vim ~/.oh-my-zsh"
+alias zshconfig="$EDITOR ~/.zshrc"
+alias i3config="(cd ~/.config/i3 && $EDITOR config)"
+alias ohmyzsh="$EDITOR ~/.oh-my-zsh"
 alias wg="wget -O tempfile www.google.com && rm tempfile"
 alias rm="rm"  # override rm -i requiring confirmation
 alias pg="ps aux | grep -v grep | grep "
@@ -125,8 +125,9 @@ alias flask="pipenv run flask"
 alias mongokill="kill $(pg mongo | grep 'MongoDB Compass' | head -1 | awk '{print $2}')"
 
 # Allow using Ctrl+S in vim in the terminal without freezing it
-alias vim="stty -ixon -ixoff && vim"
 alias nvim="stty -ixon -ixoff && nvim"
+#alias vim="stty -ixon -ixoff && vim"
+alias vim="nvim"
 
 # Simple dotfile management, a la:
 #https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/
