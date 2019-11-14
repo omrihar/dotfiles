@@ -45,6 +45,13 @@ const MASTER_MAP = [
             {"name": "Confernces", "shortcutKey": null, "url": "https://www.kdnuggets.com/meetings/index.html"},
             {"name": "Videos", "shortcutKey": null, "url": "https://www.analyticsvidhya.com/blog/2019/07/11-data-science-videos-every-data-scientist-must-watch/"},
         ]
+    },
+    {
+        "groupName": "Data Lab",
+        "items": [
+            {"name": "AI Project Canvas", "url": "https://towardsdatascience.com/introducing-the-ai-project-canvas-e88e29eb7024"},
+            {"name": "DS Project Flow", "url": "https://towardsdatascience.com/data-science-project-flow-for-startups-282a93d4508d"}
+        ]
     }
 ]
 
