@@ -50,7 +50,9 @@ const MASTER_MAP = [
         "groupName": "Data Lab",
         "items": [
             {"name": "AI Project Canvas", "url": "https://towardsdatascience.com/introducing-the-ai-project-canvas-e88e29eb7024"},
-            {"name": "DS Project Flow", "url": "https://towardsdatascience.com/data-science-project-flow-for-startups-282a93d4508d"}
+            {"name": "DS Project Flow", "url": "https://towardsdatascience.com/data-science-project-flow-for-startups-282a93d4508d"},
+            {"name": "Short Presentation", "url": "https://docs.google.com/presentation/d/17-QWajWereSgXTsudU-t-x9rIw_SZQUxgtWQ8YvE828/edit#slide=id.g6b53538e4b_2_0"},
+            {"name": "pdpipe", "url": "https://github.com/shaypal5/pdpipe"},
         ]
     }
 ]
