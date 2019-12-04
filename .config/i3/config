@@ -320,7 +320,7 @@ exec guake
 exec dropbox
 #exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 
 #
-exec compton
+#exec compton
 #exec_always --no-startup-id ~/.fehbg
 #exec_always --no-startup-id feh --bg-fill --randomize ~/wallpapers
 exec_always --no-startup-id ~/bin/set_wallpaper
