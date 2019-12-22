@@ -63,7 +63,7 @@ bindkey '^ ' autosuggest-accept
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git archlinux autopep8 common-aliases vi-mode jump github gitignore rand-quote virtualenvwrapper tmuxinator pipenv zsh-autosuggestions git-flow-completion aws)
+plugins=(git archlinux autopep8 common-aliases vi-mode jump github gitignore rand-quote tmuxinator pipenv zsh-autosuggestions git-flow-completion aws)
 
 # User configuration
 
@@ -166,10 +166,10 @@ compdef _present present
 #export PATH="$HOME/.yarn/bin:$PATH"
 
 # Stuff for virtualenvwrapper to work
-export WORKON_DIR=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/repos/projects
-source /usr/bin/virtualenvwrapper.sh
-source ~/.gem/ruby/2.4.0/gems/tmuxinator-0.10.1/completion/tmuxinator.zsh
+#export WORKON_DIR=$HOME/.virtualenvs
+#export PROJECT_HOME=$HOME/repos/projects
+#source /usr/bin/virtualenvwrapper.sh
+#source ~/.gem/ruby/2.4.0/gems/tmuxinator-0.10.1/completion/tmuxinator.zsh
 
 # Add support for direnv
 #eval "$(direnv hook zsh)"
